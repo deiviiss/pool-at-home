@@ -71,7 +71,7 @@ export default function ContractPage() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.7, delay: 0.4 }}
                 >
-                  Descarga o sube el contrato para el servicio de renta de piscina portátil
+                  Descarga el contrato para el servicio de renta de piscina portátil
                 </motion.p>
               </div>
 
