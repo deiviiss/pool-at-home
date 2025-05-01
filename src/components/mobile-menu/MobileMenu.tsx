@@ -39,6 +39,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     { name: "¿Cómo funciona?", href: "#how-it-works" },
     { name: "Especificaciones", href: "#specifications" },
     { name: "Tiempos", href: "#times" },
+    { name: "Precios", href: "#prices" },
     { name: "Condiciones", href: "#conditions" },
     { name: "FAQ", href: "#faq" },
     { name: "Contacto", href: "#contact" },

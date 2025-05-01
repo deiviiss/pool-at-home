@@ -120,7 +120,7 @@ const faqs = [
   {
     question: "¿Y cómo se vacía? ¿A qué hora vienen por ella?",
     answer:
-      "El vaciado se hace por gravedad y tarda unas 3 horas. Nosotros te avisamos con tiempo (usualmente entre 5:00 y 5:30 p.m.) para que puedas empezarlo sin prisas. La pasamos a buscar al día siguiente a la misma hora en que la instalamos, ya desaguada y lista.",
+      "El vaciado se hace por gravedad y tarda unas 3 horas. Nosotros te avisamos con tiempo para que puedas empezarlo sin prisas. La pasamos a buscar al día siguiente a la misma hora en que la instalamos, ya desaguada y lista.",
   },
   {
     question: "¿Cuánto cuesta?",
@@ -202,6 +202,7 @@ export default function Home() {
                 { id: "how-it-works", label: "¿Cómo funciona?" },
                 { id: "specifications", label: "Especificaciones" },
                 { id: "times", label: "Tiempos" },
+                { id: "prices", label: "Precios" },
                 { id: "conditions", label: "Condiciones" },
                 { id: "faq", label: "FAQ" },
                 { id: "contact", label: "Contacto" },
@@ -497,7 +498,7 @@ export default function Home() {
         </section>
 
         {/* Pricing */}
-        <section id="precios" className="py-16 bg-sky-50">
+        <section id="prices" className="py-16 bg-sky-50">
           <div className="container px-4 md:px-6">
             <AnimateWhenVisible>
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
