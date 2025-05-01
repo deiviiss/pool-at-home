@@ -61,6 +61,8 @@ const conditions = [
     title: "4. Términos de Renta",
     items: [
       "Opciones disponibles: renta por día (24 horas) o fin de semana (viernes a domingo).",
+      "El tiempo de renta comienza al momento de la instalación.",
+      "La piscina debe comenzar a vaciarse con anticipación(mínimo 3 horas antes del final del periodo contratado), para que esté lista al momento de la recolección.",
       "El pago completo debe realizarse antes de la instalación.",
       "En caso de condiciones climáticas adversas, se podrá reprogramar sin costo adicional.",
     ],

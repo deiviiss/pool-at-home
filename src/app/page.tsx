@@ -118,9 +118,9 @@ const faqs = [
       "Conectamos una manguera a tu toma de agua (llave de jardín o interior). Con presión normal, el llenado toma aproximadamente 3 horas.",
   },
   {
-    question: "¿Y para vaciarla?",
+    question: "¿Y cómo se vacía? ¿A qué hora vienen por ella?",
     answer:
-      "Se vacía por gravedad tarda ~3.5 horas. Se necesita tener una zona de drenaje o jardín donde pueda escurrir el agua.",
+      "El vaciado se hace por gravedad y tarda unas 3 horas. Nosotros te avisamos con tiempo (usualmente entre 5:00 y 5:30 p.m.) para que puedas empezarlo sin prisas. La pasamos a buscar al día siguiente a la misma hora en que la instalamos, ya desaguada y lista.",
   },
   {
     question: "¿Cuánto cuesta?",
@@ -146,6 +146,27 @@ const faqs = [
     question: "¿Pueden usarla niños?",
     answer:
       "¡Claro! Pero siempre bajo supervisión de un adulto responsable. No se permite dejar niños solos en la piscina.",
+  },
+]
+
+const prices = [
+  {
+    icon: "🏖",
+    title: "1 día",
+    price: "$300",
+    features: ["Nosotros la instalamos", "Y también la pasamos a buscar", "Ideal para eventos de un día"],
+  },
+  {
+    icon: "⏳",
+    title: "2 días",
+    price: "$500",
+    features: ["Nosotros la instalamos", "Y también la pasamos a buscar", "Perfecto para un fin de semana corto"],
+  },
+  {
+    icon: "🎉",
+    title: "Fin de semana (3 días)",
+    price: "$700",
+    features: ["Nosotros la instalamos", "Y también la pasamos a buscar", "La experiencia completa de fin de semana"],
   },
 ]
 
@@ -471,6 +492,86 @@ export default function Home() {
                     </motion.div>
                   </motion.div>
                 ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Pricing */}
+        <section id="precios" className="py-16 bg-sky-50">
+          <div className="container px-4 md:px-6">
+            <AnimateWhenVisible>
+              <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                <div className="space-y-2">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-sky-800">
+                    Precios y opciones de renta
+                  </h2>
+                  <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    Elige el plan que mejor se adapte a tus necesidades
+                  </p>
+                </div>
+              </div>
+            </AnimateWhenVisible>
+
+            <motion.div
+              className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-3 pt-10"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              {
+                prices.map((plan, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex flex-col"
+                    variants={itemVariants}
+                    whileHover={{ y: -10 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Card className="flex flex-1 flex-col overflow-hidden border-2 hover:border-sky-300 transition-colors">
+                      <CardContent className="flex flex-1 flex-col justify-between p-6">
+                        <div>
+                          <div className="mb-4 flex items-center justify-center">
+                            <span className="text-4xl">{plan.icon}</span>
+                          </div>
+                          <h3 className="text-2xl font-bold text-center text-sky-700 mb-2">{plan.title}</h3>
+                          <div className="text-center mb-4">
+                            <span className="text-4xl font-bold text-sky-800">{plan.price}</span>
+                          </div>
+                          <ul className="space-y-2 mb-6">
+                            {plan.features.map((feature, featureIndex) => (
+                              <motion.li
+                                key={featureIndex}
+                                className="flex items-center"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                              >
+                                <CheckCircle2 className="h-5 w-5 text-sky-500 mr-2 flex-shrink-0" />
+                                <span className="text-gray-600">{feature}</span>
+                              </motion.li>
+                            ))}
+                          </ul>
+                        </div>
+                        <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="mt-auto">
+                          <Button className="w-full bg-sky-600 hover:bg-sky-700 text-white">Reservar ahora</Button>
+                        </motion.div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+            </motion.div>
+
+            <motion.div
+              className="mx-auto max-w-3xl mt-8 text-center bg-sky-100 p-4 rounded-lg"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <p className="text-gray-700 text-sm">
+                <span className="font-medium">Nota:</span> El tiempo cuenta desde que se instala. La pasamos a buscar al
+                finalizar los días contratados, pero hay que empezar a vaciarla antes para que esté lista.
+              </p>
             </motion.div>
           </div>
         </section>
